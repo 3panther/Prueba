@@ -1,0 +1,22 @@
+#login {
+  margin-right: 8%;
+}
+
+#body {
+  margin: 1%;
+}
+
+#portada {
+  margin: 1%;
+}
+span {
+  width: 30%;
+}
+.loading{
+
+  position: center;
+  background-size:cover;
+  height: 100%;
+  width: 100%;
+
+}

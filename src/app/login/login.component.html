@@ -1,0 +1,54 @@
+<div class="loading" *ngIf="loading">
+ 
+</div>
+<div class="bg" *ngIf="!loading">
+
+  <div class="d-flex justify-content-center" id="cartas">
+    <div class="card border-warning mb-3" style="width:40% ;" border-radius=20%>
+      <div class="col text-center" id="portada">
+
+        <h1>Login</h1>
+      </div>
+      <div class="d-flex justify-content" id="body">
+
+
+        <div class="col">
+
+          <div class="input-group flex-wrap">
+            <span id="etiqueta" class="input-group-text">Email</span>
+            <input class="form-control" [(ngModel)]="Email" type="text" id="Email" required>
+
+          </div>
+
+          <br>
+
+          <div class="input-group flex-wrap">
+            <span id="etiqueta" class="input-group-text">Password</span>
+            <input class="form-control" [(ngModel)]="Password" [type]="passwordTypeInput" id="password" required>
+            <button item-end class="btn btn-info" (click)="togglePasswordMode()"><i
+                class="fa fa-eye fa-lg"></i></button>
+          </div>
+
+
+          <br>
+
+          <div class="d-flex justify-content-center">
+            <button class="btn btn-success" id="login" (click)="login()" (keypress)="loginEnter($event)">Login</button>
+          </div>
+          <br>
+          <div class="d-flex justify-content-center">
+            <a>Si tiene no tienes cuenta registrate aquí <a routerLink="/Registrar"
+                routerLinkActive="router-link-active">Registrarse</a></a>
+          </div>
+          <br>
+          <div class="d-flex justify-content-center">
+           <a routerLink="/recuPas1"
+                routerLinkActive="router-link-active">No me acuerdo de la contraseña</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

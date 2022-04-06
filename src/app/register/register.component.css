@@ -1,0 +1,34 @@
+#login {
+  margin-right: 8%;
+}
+
+#body {
+  margin: 1%;
+}
+
+#portada {
+  margin: 1%;
+}
+span {
+  width: 30%;
+}
+
+.bg {
+  background-image: url("/assets/imagen/fondoRegister.jpg");
+  position: relative;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  padding: 3%;
+}
+
+.loading{
+  background-image: url("../../assets/imagen/cargaAngu.gif");
+  position: center;
+  background-size:cover;
+  height: 100%;
+  width: 100%;
+
+}
+
+

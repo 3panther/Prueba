@@ -1,0 +1,38 @@
+#inicio {
+  color: white;
+}
+#contenedor {
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-top: 4%;
+}
+
+mat-sidenav {
+  height: 100%;
+  background: rgb(0, 195, 255);
+}
+.aligned-with-icon {
+  margin-top: 5px;
+  margin-left: 5px;
+}
+mat-sidenav,
+mat-sidenav-content {
+  width: 25%;
+}
+
+#sidebar.active {
+  min-width: 100%;
+  max-width: 100%;
+  text-align: center;
+  width: -100% !important;
+  height: -91%;
+}
+
+#sidebar.deasctivate {
+  margin-left: 0;
+}
+
+mat-sidenav-container {
+  height: 91%;
+  width: 100%;
+}

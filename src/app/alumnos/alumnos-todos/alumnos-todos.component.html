@@ -1,0 +1,66 @@
+<div class="loading" *ngIf="loading">
+  <img src="../../assets/imagen/cargaAzul.gif"/>
+</div>
+<div class="container">
+
+
+  <div class="input-group flex-wrap">
+    <span class="input-group-text">Provincia</span>
+    <select type="number" [(ngModel)]="idProvincia" class="form-control" (ngModelChange)="verAlumnoP()">
+      <option value="" selected disabled>Seleccionar Provincia...</option>
+      <option *ngFor="let provincia of provincias" value="{{ +provincia.id }}">
+        <div>{{ provincia.nombre }}</div>
+      </option>
+    </select>
+
+  </div>
+  <br>
+  <div class="input-group flex-wrap">
+    <span class="input-group-text">Ciclos</span>
+    <select type="number" [(ngModel)]="ciclo3" class="form-control" (ngModelChange)="verAlumnoC()">
+      <option value="" selected disabled>Seleccionar Ciclos...</option>
+      <option *ngFor="let ciclo of ciclos" value="{{ +ciclo.id }}">
+        <div>{{ ciclo.nombre }}</div>
+      </option>
+    </select>
+
+  </div>
+
+</div>
+<br>
+<div class="row space-rows" >
+  <div *ngFor="let alum of alumnos" class="col-md-6">
+    <div class="card cards-shadown" *ngIf="!loading">
+      <!-- prettier-ignore -->
+      <div class="d-flex justify-content-between p-3 text-center bg-primary rounded text-light mb-0"
+        style="font-size: larger;">
+        <div>{{ alum.email }}</div>
+
+      </div>
+
+  
+      <tr class="mx-2">
+        <th style="font-size: 18px" style="width: 200px">notaMediaGrado</th>
+        <td style="font-size: 16px">{{ alum.notaMediaGrado }}</td>
+      </tr>
+      <hr class="solid">
+      <tr class="mx-2">
+        <th style="font-size: 18px" style="width: 200px">CicloCursando</th>
+        <td style="font-size: 16px">{{ alum.ciclo }}</td>
+      </tr>
+      <hr class="solid">
+    
+
+      <div class="from-group">
+        
+        <button class="btn btn-secondary" id="botonMensaje" (click)="mensajes(alum)">
+          <i class="fa fas fa-bell"></i>
+        </button>
+        
+
+      </div>
+    </div>
+
+    <p></p>
+  </div>
+</div>

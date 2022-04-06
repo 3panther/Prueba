@@ -1,0 +1,24 @@
+#portada {
+  margin: 1%;
+}
+
+#register {
+  margin-right: 10%;
+}
+
+#body {
+  margin: 8;
+}
+
+span {
+  width: 30%;
+}
+
+.loading{
+
+  position: center;
+  background-size:cover;
+  height: 100%;
+  width: 100%;
+
+}

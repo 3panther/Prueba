@@ -1,0 +1,63 @@
+<div class="loading" *ngIf="loading">
+  <img src="../../assets/imagen/cargaAzul.gif"/>
+</div>
+<div class="row space-rows" *ngIf="!loading">
+  <div><button routerLink="crearOferta" class="btn btn-success" style="margin-left: 80%;"><i
+        class="fa fa-plus"></i></button></div>
+  <div *ngFor="let oferta of ofertas4" class="col-md-6">
+    <div class="card cards-shadown" style="margin: 5%;">
+      <!-- prettier-ignore -->
+      <div class="d-flex justify-content-between p-3 text-center bg-primary rounded text-light mb-0"
+        style="font-size: larger;">
+        <div>{{ oferta.nombreOferta }}</div>
+
+      </div>
+
+      <tr class="mx-2">
+        <th style="font-size: 18px" style="width: 200px">Descripcion</th>
+        <td style="font-size: 16px">{{ oferta.descripcion }}</td>
+      </tr>
+      <hr class="solid">
+      <tr class="mx-2">
+        <th style="font-size: 18px" style="width: 200px"> Horarios</th>
+        <td style="font-size: 16px">{{ oferta.horarios }}<a> Horas</a></td>
+      </tr>
+      <hr class="solid">
+      <tr class="mx-2">
+        <th style="font-size: 18px" style="width: 200px">Remuneracion</th>
+        <td style="font-size: 16px">{{ oferta.remuneracion }}<a> €</a></td>
+      </tr>
+      <hr class="solid">
+      <tr class="mx-2">
+        <th style="font-size: 18px" style="width: 200px">FechaInicio</th>
+        <td style="font-size: 16px">{{ oferta.fechaInicio | date:'yyyy-MM-dd' }}</td>
+      </tr>
+      <hr class="solid">
+      <tr class="mx-2">
+        <th style="font-size: 18px" style="width: 200px">FechaFinal</th>
+        <td style="font-size: 16px">{{ oferta.fechaFinal | date:'yyyy-MM-dd'}}</td>
+      </tr>
+      <hr class="solid">
+      <tr class="mx-2">
+        <th style="font-size: 18px" style="width: 200px">Ciclo requerido</th>
+        <td style="font-size: 16px">{{ oferta.ciclos}}</td>
+      </tr>
+      <p></p>
+
+      <hr class="solid">
+
+      <div class="from-group">
+
+
+        <button class="btn btn-danger" id="botonDelete" (click)='borrarOferta(oferta)' style="margin-right: 5%;">
+          <i class="fa fas fa-trash-alt"></i>
+        </button>
+        <button class="btn btn-warning" id="botonDelete" routerLink="editOferta" (click)="edit(oferta)">
+          <i class="fa fas fa-edit"></i>
+        </button>
+
+
+
+      </div>
+      <br>
+    </div>

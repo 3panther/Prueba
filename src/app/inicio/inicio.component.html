@@ -1,0 +1,50 @@
+<mat-toolbar style="background-color: rgb(0, 195, 255)" id="inicio"><button class="btn btn-dark"
+    (click)="opened=!opened"><i class="fa fa-bars fa-lg"></i></button> <span class="aligned-with-icon">Inicio</span>
+  <div class="dropdown" style="font-size: 15px; margin-left: 85%; margin-top: 30px;">
+    <button class="btn  dropdown-toggle" style="width: 120px ;" type="button" id="dropdownMenuButton1"
+      data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="row fa fa-user fa-lg" style="margin-left: 10px;"></i>
+      <i class="row">{{Nombre}}</i>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li><a class="dropdown-item" routerLink="login">Logearse</a></li>
+      <li><a class="dropdown-item" routerLink="login" (click)="borrarStorage()">Cerrar Sesión</a></li>
+      <li><a class="dropdown-item" routerLink="registro">Registrarse</a></li>
+    </ul>
+  </div>
+
+
+</mat-toolbar>
+<mat-sidenav-container id="sidebar" class="active">
+  <mat-sidenav [(opened)]="opened">
+
+    <mat-nav-list>
+      <a mat-list-item style="background-color: rgb(0, 195, 255)" routerLink="perfil"><i
+          class="fa fa-user fa-lg"></i><span class="aligned-with-icon">Mi perfil</span></a>
+      <mat-divider></mat-divider>
+      <a mat-list-item style="background-color: rgb(0, 195, 255)" routerLink="alumno"><i
+          class="fa fa-user fa-lg"></i><span class="aligned-with-icon">Mis candidatos</span></a>
+      <mat-divider></mat-divider>
+      <a mat-list-item style="background-color: rgb(0, 195, 255)" routerLink="alumnoacptado"><i
+        class="fa fa-user fa-lg"></i><span class="aligned-with-icon">Candidatos Aceptados</span></a>
+        <mat-divider></mat-divider>
+        <a mat-list-item style="background-color: rgb(0, 195, 255)" routerLink="alumnoall" *ngIf="premium"><i
+          class="fa fa-user fa-lg"></i><span class="aligned-with-icon">Buscar Candidatos</span></a>
+          <mat-divider></mat-divider>
+      <a mat-list-item style="background-color: rgb(0, 195, 255)" routerLink="ofertas"><i
+        class="fa fa-clipboard fa-lg"></i><span class="aligned-with-icon">Ofertas</span></a>
+        <mat-divider></mat-divider>
+        <a mat-list-item style="background-color: rgb(0, 195, 255)" (click)="serPremium()" *ngIf="!premium"><i
+         class="fa fa-certificate"></i><span class="aligned-with-icon">Premium</span></a>
+
+    </mat-nav-list>
+
+
+
+  </mat-sidenav>
+  <mat-sidenav-content style="width: 100%; height: 100%;">
+    <div class="justify-content-center" id="contenedor">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
